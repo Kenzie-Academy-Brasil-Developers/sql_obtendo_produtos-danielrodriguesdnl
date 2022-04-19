@@ -97,17 +97,16 @@ SELECT * FROM produtos ORDER BY nome;
 SELECT * FROM produtos ORDER BY preco DESC;
 
 /*QUERY 17*/
-SELECT categoria, COUNT(*) contador_categoria FROM produtos GROUP BY categoria;
+SELECT LOWER(categoria), COUNT(*) contador_categoria FROM produtos GROUP BY LOWER(categoria);
 
 /*QUERY 18*/
-SELECT categoria, AVG(preco) media_categoria FROM produtos GROUP BY categoria;
+SELECT LOWER(categoria), AVG(preco) media_categoria FROM produtos GROUP BY LOWER(categoria);
 
 /*QUERY 19*/
-SELECT categoria, MIN(preco) minimo_categoria FROM produtos GROUP BY categoria;
+SELECT LOWER(categoria), MIN(preco) minimo_categoria FROM produtos GROUP BY LOWER(categoria);
 
 /*QUERY 20*/
-SELECT categoria, SUM(preco) media_categoria FROM produtos GROUP BY categoria HAVING SUM(preco) < 1000;
-
+SELECT LOWER(categoria), COUNT(*) FROM produtos WHERE preco < 1000 GROUP BY LOWER(categoria);
 
 
 
